@@ -126,4 +126,3 @@ mytuple = fruits * 2
 
 print(mytuple) 
 
-#
