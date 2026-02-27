@@ -1,4 +1,4 @@
-# 1
+# 1: super().__init__ для вызова родителя
 class Person:
     def __init__(self,name): self.name=name
 class Student(Person):
@@ -8,7 +8,7 @@ class Student(Person):
 s=Student("Aruzhan","A")
 print(s.name,s.grade)
 
-# 2
+# 2: super() в методе
 class Animal:
     def speak(self): print("Some sound")
 class Dog(Animal):
@@ -17,14 +17,14 @@ class Dog(Animal):
         print("Woof!")
 Dog().speak()
 
-# 3
+# 3: super() с дополнительным свойством
 class Employee(Person):
     def __init__(self,name,position):
         super().__init__(name)
         self.position=position
 print(Employee("Dana","Manager").name)
 
-# 4
+# 4: super() с методом
 class Base:
     def greet(self): print("Hello from Base")
 class Derived(Base):

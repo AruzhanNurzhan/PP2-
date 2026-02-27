@@ -1,30 +1,23 @@
-#  1: 
+# 1: Простой класс с методом
 class Dog:
     def bark(self):
         print("Woof!")
-my_dog = Dog()
-my_dog.bark()
+Dog().bark()
 
-#  2: 
+# 2: Класс с двумя методами
 class Cat:
-    def meow(self):
-        print("Meow!")
-    def sleep(self):
-        print("Zzz...")
-my_cat = Cat()
-my_cat.meow()
-my_cat.sleep()
+    def meow(self): print("Meow!")
+    def sleep(self): print("Zzz...")
+c=Cat()
+c.meow()
+c.sleep()
 
-#  3: 
+# 3: Метод с self
 class Person:
-    def introduce(self, name):
-        print(f"My name is {name}")
-p = Person()
-p.introduce("Aruzhan")
+    def introduce(self,name): print(f"My name is {name}")
+Person().introduce("Aruzhan")
 
-#  4:
+# 4: Метод с параметрами
 class Calculator:
-    def multiply(self, a, b):
-        print(a * b)
-calc = Calculator()
-calc.multiply(5, 6)
+    def multiply(self,a,b): print(a*b)
+Calculator().multiply(5,6)
