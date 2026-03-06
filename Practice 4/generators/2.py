@@ -7,4 +7,4 @@ def even(n):
         if i%2==0:
             yield i
 n=int(input())
-print(*even(n),sep=",")
+print(",".join(str(x) for x in even(n)))
