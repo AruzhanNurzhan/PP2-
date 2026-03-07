@@ -5,7 +5,7 @@ def parse_receipt(file_path):
         data = f.read() 
         #Извлечение даты и времени
     datetime_match = re.search(
-        r'Время:\s+(\d{2}\.\d{2}\.\d{4})\s+(\d{2}:\d{2}:\d{2})',
+        r'Время:\s(\d{2}\.\d{2}\.\d{4})\s+(\d{2}:\d{2}:\d{2})',
         data
     )
     date = datetime_match.group(1) if datetime_match else "Unknown"
@@ -62,7 +62,6 @@ def parse_receipt(file_path):
     }
 
     return receipt_json
-
 # Запуск парсера и вывод JSON
 if __name__ == "__main__":
     result = parse_receipt("raw.txt")
