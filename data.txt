@@ -1,0 +1,5 @@
+Hello, this is a sample file.
+We are learning Python file handling.
+This file contains multiple lines of text.
+Each line can be read differently.
+Practice makes perfect.
