@@ -2,7 +2,7 @@ import csv
 import sys
 from connect import init_db, get_conn
 
-def add_contact_console():
+def add_contact():
     first = input("First name: ").strip()
     phone = input("Phone: ").strip()
     if not first or not phone:
@@ -58,7 +58,7 @@ def main():
         print("\n1.Import CSV  2.Add  3.Search  4.Delete  0.Exit")
         choice = input("Choice: ")
         if choice == "1": import_csv()
-        elif choice == "2": add_contact_console()
+        elif choice == "2": add_contact()
         elif choice == "3": search_name()
         elif choice == "4": delete_contact()
         elif choice == "0": sys.exit()
