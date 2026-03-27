@@ -7,9 +7,10 @@ def init_db():
     cur.execute("""
         CREATE TABLE IF NOT EXISTS phonebook (
             id SERIAL PRIMARY KEY,
-            first_name VARCHAR(50) NOT NULL,
-            phone VARCHAR(20) UNIQUE NOT NULL
-        )
+            first_name TEXT NOT NULL,
+            last_name TEXT,
+            phone TEXT UNIQUE NOT NULL
+        );
     """)
     conn.commit()
     cur.close()
