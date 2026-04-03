@@ -13,6 +13,26 @@ def add_contact():
     conn.commit()
     cur.close()
     conn.close()
+def add_contact():
+    first = input("First name: ").strip()
+    phone = input("Phone: ").strip()
+    if not first or not phone:
+        return
+
+    conn = get_conn()
+    cur = conn.cursor()
+
+    cur.execute(
+        "INSERT INTO phonebook (first_name, phone) VALUES (%s, %s) ON CONFLICT (phone) DO NOTHING;",
+        (first, phone)
+    )
+
+    conn.commit()
+    cur.close()
+    conn.close()
+    with open("contacts.csv", "a", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([first, phone])
 
 def import_csv():
     file = "contacts.csv"
