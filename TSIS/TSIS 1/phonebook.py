@@ -99,7 +99,6 @@ def import_csv():
     conn = get_conn()
     cur = conn.cursor()
     try:
-        # utf-8-sig лечит проблему с "невидимыми" символами в начале файла
         with open("contacts.csv", encoding="utf-8-sig") as f:
             reader = csv.DictReader(f)
             
