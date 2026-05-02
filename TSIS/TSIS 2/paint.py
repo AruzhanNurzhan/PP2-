@@ -96,7 +96,10 @@ def main():
                     continue # don't trigger other hotkeys if we are just typing
 
                 # save drawing if they press ctrl+s
-                if event.key == pygame.K_s and (pygame.key.get_mods() & pygame.KMOD_CTRL):
+                if event.key == pygame.K_s and (
+    pygame.key.get_mods() & pygame.KMOD_CTRL or
+    pygame.key.get_mods() & pygame.KMOD_META
+):
                     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
                     filename = f"canvas_{timestamp}.png"
                     pygame.image.save(canvas, filename)
